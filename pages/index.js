@@ -18,8 +18,15 @@ export default function Home() {
       </Head>
 
       
-      <h1>Welcome to the app</h1>
-      <button onClick={logout}>Logout</button>
+     <div>
+       <div className="max-w-screen-2xl mx-auto">
+          {/* Header */}
+            
+
+          {/* Messages */}
+       </div>
+        
+      </div>
     </div>
   )
 }
