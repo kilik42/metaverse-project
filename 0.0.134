@@ -1,0 +1,8 @@
++ moralis@0.0.176
+updated 1 package and audited 902 packages in 17.928s
+
+71 packages are looking for funding
+  run `npm fund` for details
+
+found 5 moderate severity vulnerabilities
+  run `npm audit fix` to fix them, or `npm audit` for details
