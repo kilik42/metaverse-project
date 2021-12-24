@@ -6,7 +6,7 @@ import Header from '../components/Header';
 
 export default function Home() {
 
-  const {isAuthenticated, logout}= useMoralis();
+  const {isAuthenticated}= useMoralis();
 
   if (!isAuthenticated) return <Login/>
 
@@ -25,6 +25,7 @@ export default function Home() {
             <Header/>
 
           {/* Messages */}
+          <Messages />
        </div>
         
       

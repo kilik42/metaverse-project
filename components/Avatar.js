@@ -9,7 +9,8 @@ function Avatar({username, logoutOnPress}) {
         
         <div>
             <Image
-            src={`https://avatars.dicebar.com/api/pixel-art/${username || user.get("username")}`}
+            className="rounded-full bg-black cursor-pointer hover:opacity-75 "
+            src={`https://avatars.dicebar.com/api/pixel-art/${username || user.get("username")}.svg`}
             layout="fill"
             onClick={() => logoutOnPress && logout()}
             
