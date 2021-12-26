@@ -3,6 +3,34 @@ import { useMoralis } from "react-moralis";
 function SendMessage() {
     const {user, Moralis} = useMoralis();
     const [message, setMessage] = useState("");
+    
+    const sendMessage =(e)=>{
+        e.preventDefault();
+
+        if(!message) return;
+
+        //I am extending messages, building a database
+        const Messages = Moralis.Object.extend("Messages");
+        const messages = new Messages();
+
+        messages.save({
+            message: message,
+            username: user.getUsername(),
+            ethAddress: user.get('ethAddress'),
+
+
+        }).then(
+        (message)=>{
+            //the object was saved successfully
+
+        },
+        (error)=>{
+            //the save failed
+            // error is a Moralis.Error with an error code and message
+            console.log(error.message);
+        });
+    }
+
 
     return (
         <form className="flex fixed bottom-10 bg-black opacity-80 w-11/12 px-6 py-4 max-w-2xl shadow-xl rounded-full border-4 border-blue-400">
@@ -12,7 +40,9 @@ function SendMessage() {
             placeholder={`Enter a essage ${user.getUsername()}...`}
             />
             <button
+            onClick={sendMessage}
             className="font-bold text-pink-500"
+            type="submit"
             >
                 Send 
             </button>
