@@ -1,6 +1,7 @@
 import Image from "next/image";
+import { useMoralis } from "react-moralis";
 import ChangeUsername from "./ChangeUsername";
-
+import Avatar from "./Avatar"
 function Header() {
     const {user} = useMoralis();
 
@@ -24,7 +25,7 @@ function Header() {
                         
                     <h1 text-3xl>Welcome to the Metaverse</h1>
 
-                    <h2 className="text-5xl font-bold truncate">{user.getUserName()}</h2>
+                    <h2 className="text-5xl font-bold truncate">{user.getUsername()}</h2>
                 
 
 
